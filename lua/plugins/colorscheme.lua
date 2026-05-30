@@ -1,12 +1,10 @@
 return {
-  "sainnhe/everforest",
-  lazy = false,
-  priority = 1000,
+  "navarasu/onedark.nvim",
+  priority = 1000, -- make sure to load this before all the other start plugins
   config = function()
-    -- Optionally configure and load the colorscheme
-    -- directly inside the plugin declaration.
-    vim.g.everforest_background = "hard"
-    vim.g.everforest_enable_italic = true
-    vim.cmd.colorscheme("everforest")
+    require("onedark").setup({
+      style = "dark",
+    })
+    require("onedark").load()
   end,
 }
